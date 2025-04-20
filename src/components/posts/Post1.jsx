@@ -37,13 +37,6 @@ const Post1 = () => {
               label="Español"
               default
             />
-            {/* Audio descriptions track */}
-            <track
-              src={audioDescriptionUrl}
-              kind="descriptions"
-              srcLang="es"
-              label="Descripción de audio"
-            />
             Su navegador no soporta el elemento de video.
           </video>
         </div>
