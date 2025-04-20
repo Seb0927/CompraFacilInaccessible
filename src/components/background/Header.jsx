@@ -20,15 +20,15 @@ const Header = () => {
         {/* Justification:
       https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA11.html */}
         <nav>
-          <ul className='flex items-center space-x-4'>
+          <ul className='flex flex-row-reverse items-center space-x-4 space-x-reverse'>
             <li className='text-white text-xl'>
-              <a href='/'>Catálogo</a>
+              <a href='assistance'>Ayuda</a>
             </li>
             <li className='text-white text-xl'>
               <a href='/blog'>Blog</a>
             </li>
             <li className='text-white text-xl'>
-              <a href='assistance'>Ayuda</a>
+              <a href='/'>Catálogo</a>
             </li>
           </ul>
         </nav>
