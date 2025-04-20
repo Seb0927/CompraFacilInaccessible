@@ -81,6 +81,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<DynamicPage componentName="catalog" />} />
         <Route path="/blog" element={<DynamicPage componentName="blog" />} />
         <Route path="/blog/:componentName" element={<DynamicPage />} />
+        <Route path="/assistance" element={<DynamicPage componentName="assistance" />} />
         <Route path="/login" element={<DynamicPage componentName="login" />} />
         <Route path="/register" element={<DynamicPage componentName="register" />} />
         <Route path="/help" element={<DynamicPage componentName="assistance" />} />
