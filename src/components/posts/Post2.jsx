@@ -48,15 +48,6 @@ const Post2 = () => {
             </p>
           </div>
         </div>
-
-        {/* Transcripción de la entrevista */}
-        <h4 className='text-2xl font-semibold mb-4'>Transcripción</h4>
-        {transcriptParagraphs.map((paragraph, index) => (
-          <p key={index} className='text-base mb-4'>
-            {paragraph}
-          </p>
-        ))}
-
       </article>
     </section>
   )
