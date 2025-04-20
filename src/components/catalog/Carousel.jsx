@@ -111,7 +111,6 @@ const Carousel = (props) => {
       <img
         crossOrigin='anonymous'
         src={imageUrl + images[index] + '.jpg'}
-        alt={description}
         className='h-full w-full object-cover rounded-lg pointer-events-none'
         aria-roledescription="Imagen"
         aria-label={`Imagen ${index + 1} de ${images.length}: ${description}`}
