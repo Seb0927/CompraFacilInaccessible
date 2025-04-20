@@ -31,14 +31,6 @@ const Post3 = () => {
             poster="https://res.cloudinary.com/dao5kgzkm/image/upload/v1741316071/Videos/presentation-poster.jpg"
           >
             <source src={videoUrl} type="video/mp4" />
-            {/* Subtitles track */}
-            <track
-              src={subtitlesUrl}
-              kind="subtitles"
-              srcLang="es"
-              label="Español"
-              default
-            />
             {/* Audio descriptions track */}
             <track
               src={audioDescriptionUrl}
