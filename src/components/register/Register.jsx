@@ -1,5 +1,6 @@
 import { useContext, useState, useRef } from 'react'
 import { UserContext } from '@/contexts/UserContext'
+import { Plus } from 'lucide-react';
 
 const Register = () => {
 
@@ -67,7 +68,7 @@ const Register = () => {
       <section className='h-auto w-full md:w-4/5 lg:w-8/12 py-8 px-8 bg-blue-medium-light'>
         <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
           <h1 className='text-4xl font-bold'>Registrate</h1>
-          <span className='text-lg'>Ingresa las credenciales que utilizarás para iniciar sesión en CompraFácil</span>
+          <p className='text-lg'>Ingresa las credenciales que utilizarás para iniciar sesión en CompraFácil. Debes dar click en el botón con forma de más "+" para crear tu cuenta</p>
           
           {error && (
             <p 
@@ -126,8 +127,8 @@ const Register = () => {
           <div className='pt-2 flex flex-col space-y-2 items-center'>
             <button 
               type="submit"
-              className='h-9 w-32 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
-              Registrarme
+              className='h-9 w-auto p-2 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
+              <Plus />
             </button>
             <a href='/login' className='underline hover:text-blue-darkest'>Ya tengo una cuenta</a>
           </div>
