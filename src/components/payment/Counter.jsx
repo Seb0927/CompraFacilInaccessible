@@ -22,14 +22,6 @@ const Counter = () => {
     return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
   
-  // Add 30 minutes to timer (up to max 3 hours)
-  const extendTime = () => {
-    setTimeLeft(prevTime => {
-      const newTime = prevTime + extensionTime
-      return newTime <= maxTime ? newTime : maxTime
-    })
-  }
-  
   // Countdown effect
   useEffect(() => {
     if (timeLeft <= 0) {
@@ -50,13 +42,6 @@ const Counter = () => {
     <div className="p-4 rounded-lg shadow-md bg-blue-light text-center">
       <h2 className="text-lg font-semibold mb-2">Tiempo restante para completar la compra</h2>
       <div className="text-3xl font-bold mb-3">{formatTime(timeLeft)}</div>
-      <button
-        onClick={extendTime}
-        className="px-4 py-2 bg-blue-dark text-white rounded hover:bg-blue-darkest transition-colors"
-        disabled={timeLeft + extensionTime > maxTime}
-      >
-        Añadir 30 minutos
-      </button>
       <p className="text-sm text-gray-600 mt-2">
         {timeLeft + extensionTime > maxTime 
           ? "Has alcanzado el tiempo máximo (3 horas)" 
