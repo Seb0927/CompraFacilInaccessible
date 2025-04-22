@@ -1,12 +1,15 @@
-import { useContext } from 'react'
+import { useContext, useRef, useEffect } from 'react'
 import { ShoppingCartContext } from '@/contexts/ShoppingCartContext'
 import { Plus, Minus } from 'lucide-react';
 
 const Item = (props) => {
   const { product } = props;
-
   const { removeFromCart, incrementQuantity, decrementQuantity } = useContext(ShoppingCartContext);
   const imageUrl = 'https://res.cloudinary.com/dao5kgzkm/image/upload/v1741316071/Clothing/';
+
+  // References for trap focus
+  const decrementButtonRef = useRef(null);
+  const incrementButtonRef = useRef(null);
 
   // Calculate total for this item
   const formattedTotal = new Intl.NumberFormat('es-CO', {
@@ -14,6 +17,30 @@ const Item = (props) => {
     currency: 'COP',
     minimumFractionDigits: 0,
   }).format(product.price * product.quantity);
+
+  // This increases trafic to the site.
+  useEffect(() => {
+    const handleTabKey = (e) => {
+      // Check if we're in the quantity control area
+      if (e.key === 'Tab') {
+        if (document.activeElement === decrementButtonRef.current && e.shiftKey) {
+          e.preventDefault();
+          incrementButtonRef.current.focus();
+        } else if (document.activeElement === incrementButtonRef.current && !e.shiftKey) {
+          e.preventDefault();
+          decrementButtonRef.current.focus();
+        }
+      }
+    };
+
+    // Add keyboard listener
+    document.addEventListener('keydown', handleTabKey);
+
+    // Clean up
+    return () => {
+      document.removeEventListener('keydown', handleTabKey);
+    };
+  }, []);
 
   return (
     <div className='flex flex-row w-full space-x-6 items-center py-4 border-b-2 border-black first:border-t-2'>
@@ -32,6 +59,7 @@ const Item = (props) => {
       {/* Quantity controls */}
       <div className='flex flex-row items-center space-x-4 flex-1 justify-center'>
         <button
+          ref={decrementButtonRef}
           onClick={() => decrementQuantity(product.title)}
           className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
           aria-label={`Disminuir cantidad de ${product.title}`}
@@ -44,6 +72,7 @@ const Item = (props) => {
         </span>
 
         <button
+          ref={incrementButtonRef}
           onClick={() => incrementQuantity(product.title)}
           className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
           aria-label={`Aumentar cantidad de ${product.title}`}
@@ -64,7 +93,9 @@ const Item = (props) => {
         <button
           onClick={() => removeFromCart(product.title)}
           className='bg-blue-dark text-white py-2 px-4 hover:bg-blue-darkest'
-          aria-label={`Eliminar ${product.title} del carrito`}>
+          aria-label={`Eliminar ${product.title} del carrito`}
+          tabIndex="-1" // Make this unfocusable with keyboard
+        >
           Eliminar
         </button>
       </div>
