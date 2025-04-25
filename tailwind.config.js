@@ -13,7 +13,7 @@ export default {
         },
       },
       animation: {
-        blink: 'blink 0.50s infinite',
+        blink: 'blink 0.30s infinite',
       },
       colors: {
         blue: {
