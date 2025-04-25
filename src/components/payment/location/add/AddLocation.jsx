@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from 'react'
+import { useState, useContext, useRef } from 'react'
 import { UserContext } from '@/contexts/UserContext'
 
 const AddCard = () => {
@@ -54,11 +54,14 @@ const AddCard = () => {
               id='address'
               type='text'
               value={address}
+              tabIndex={3}
               onChange={(e) => setAddress(e.target.value)}
               className='w-full h-9 bg-blue-dark px-1 text-white'
               aria-required="true" />
           </div>
 
+          {/* Note: 
+          Usually the neighborhood is asked first and then the address. Make it behave the same as well! */}
           <div className='flex flex-col space-y-1'>
             <label htmlFor='neighborhood' className='block'>
               Barrio
@@ -67,6 +70,7 @@ const AddCard = () => {
               id='neighborhood'
               type='text'
               value={neighborhood}
+              tabIndex={2}
               onChange={(e) => setNeighborhood(e.target.value)}
               className='w-full h-9 bg-blue-dark px-1 text-white'
               aria-required="true" />
@@ -81,6 +85,7 @@ const AddCard = () => {
               id='name'
               type='text'
               value={name}
+              tabIndex={4}
               onChange={(e) => setName(e.target.value)}
               className='w-full h-9 bg-blue-dark px-1 text-white'
               aria-required="true" />
@@ -88,6 +93,7 @@ const AddCard = () => {
 
           <div className='flex flex-col space-y-2 items-center'>
             <button
+              tabIndex={5}
               type="submit"
               className='h-9 w-48 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
               Agregar dirección
