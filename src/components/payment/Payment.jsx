@@ -20,7 +20,7 @@ const Payment = () => {
 
   return (
     <Container>
-      <h1 className='text-4xl font-bold w-full text-center'>Compra final</h1>
+      <span className='text-4xl font-bold w-full text-center'>Compra final</span>
 
       {/* Counter */}
       <div className="w-full max-w-md mx-auto my-4">
@@ -29,10 +29,10 @@ const Payment = () => {
 
       <div className='flex flex-col md:flex-row w-full md:space-x-8 py-4'>
         <section className='flex-1'>
-          <h2 className='text-3xl font-bold mb-4'>Detalles del pago</h2>
+          <span className='text-3xl font-bold mb-4'>Detalles del pago</span>
           <div className='flex flex-row space-y-2'>
             <div className='flex-1'>
-              <h3 className='text-2xl font-bold'>Dirección</h3>
+              <span className='text-2xl font-bold'>Dirección</span>
               <address className='not-italic'>
                 <p>{user.selectedLocation.address}</p>
                 <p>{user.selectedLocation.neighborhood}</p>
@@ -40,7 +40,7 @@ const Payment = () => {
               </address>
             </div>
             <div className='flex-1'>
-              <h3 className='text-2xl font-bold'>Tarjeta</h3>
+              <span className='text-2xl font-bold'>Tarjeta</span>
               <p>{'**' + user.selectedCreditCard.number.slice(-4)}</p>
               <p>
                 <time dateTime={"01-" + user.selectedCreditCard.expiration_month + "-" + user.selectedCreditCard.expiration_year}>
@@ -55,7 +55,7 @@ const Payment = () => {
         </section>
 
         <section className='flex-1'>
-          <h2 className='text-2xl font-bold'>Productos</h2>
+          <span className='text-2xl font-bold'>Productos</span>
           <div className='flex flex-col space-y-4 py-4 w-full md:h-64 md:overflow-auto'>
             {cart.map((product, index) => (
               <Product key={index} product={product} />
