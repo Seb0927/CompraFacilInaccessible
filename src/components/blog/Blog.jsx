@@ -6,11 +6,11 @@ const Blog = () => {
   // State to control blinking animation
   const [isBlinking, setIsBlinking] = useState(true);
 
-  // Effect to stop blinking after 5 seconds
+  // Effect to stop blinking after 30 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsBlinking(false);
-    }, 5000); // 5000 milliseconds = 5 seconds
+    }, 30000); // 30000 milliseconds = 30 seconds
 
     // Clean up timer on unmount
     return () => clearTimeout(timer);
@@ -30,6 +30,7 @@ const Blog = () => {
       </div>
 
       {/* Mensaje promocional con animación de parpadeo usando Tailwind */}
+      {/* Note: Animation property saves the blinking interval time */}
       <div 
         className={`mt-10 mx-auto max-w-4xl border-2 border-blue-dark rounded-lg p-6 shadow-md
           ${isBlinking ? 'animate-blink' : 'bg-blue-light'}`}
