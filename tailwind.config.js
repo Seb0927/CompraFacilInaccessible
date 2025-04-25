@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        blink: {
+          '0%, 100%': { backgroundColor: '#a5d1d4' }, // Light blue
+          '50%': { backgroundColor: '#FFF9C4' }, // Light yellow
+        },
+      },
+      animation: {
+        blink: 'blink 0.50s infinite',
+      },
       colors: {
         blue: {
           'darkest': '#063133',
