@@ -65,9 +65,10 @@ const Payment = () => {
       </div>
 
       <div className='flex justify-center w-full '>
-        <button 
-        onClick={handlePayment}
-        className='h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>
+        <button
+          onMouseDown={handlePayment}
+          onClick={handlePayment}
+          className='h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>
           Comprar
         </button>
       </div>
