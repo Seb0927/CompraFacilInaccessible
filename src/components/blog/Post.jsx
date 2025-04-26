@@ -16,7 +16,10 @@ const Post = (props) => {
     <article className='min-h-auto h-auto w-full px-10 py-6 bg-blue-medium-light'>
       <h2 className='text-2xl font-bold mb-2'>{title}</h2>
       <p className='text-lg mb-4'>{getSubstring(content, 150)}</p>
-      <a href={'/blog/post' + (id + 1)} className='flex items-center justify-center h-9 w-28 bg-blue-dark text-white text-xl mt-3 hover:bg-blue-darkest'>Leer</a>
+      <a
+        title={'Leer más sobre ' + title}
+        href={'/blog/post' + (id + 1)}
+        className='flex items-center justify-center h-9 w-28 bg-blue-dark text-white text-xl mt-3 hover:bg-blue-darkest'>Leer más</a>
     </article>
   )
 }
