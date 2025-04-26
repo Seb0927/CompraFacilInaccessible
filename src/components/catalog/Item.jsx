@@ -29,8 +29,7 @@ const Item = (props) => {
             https://www.w3.org/WAI/WCAG22/Techniques/general/G208 */}
             <button 
               onClick={() => addToCart({ title, price, description, images })}
-              className='bg-blue-dark text-white mt-3 lg:mt-6 px-6 py-2 text-xl w-full rounded-lg hover:bg-blue-darkest'
-              aria-label={`Añadir ${title}`}>
+              className='bg-blue-dark text-white mt-3 lg:mt-6 px-6 py-2 text-xl w-full rounded-lg hover:bg-blue-darkest'>
               Añadir
             </button>
           </div>
