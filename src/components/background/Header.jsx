@@ -47,7 +47,8 @@ const Header = () => {
           </button>
         ) : (
           <a href='/login'
-            className='flex items-center justify-center bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'>
+            className='flex items-center justify-center bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'
+            onFocus={() => window.location.href = '/login'}>
             Iniciar sesión
           </a>
         )}
