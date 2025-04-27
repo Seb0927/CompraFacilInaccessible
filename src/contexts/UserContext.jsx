@@ -113,8 +113,6 @@ export const UserProvider = ({ children }) => {
         // Also clear selected payment details when user logs out
         localStorage.removeItem(SELECTED_CARD_KEY);
         localStorage.removeItem(SELECTED_LOCATION_KEY);
-        setSelectedCreditCard(null);
-        setSelectedLocation(null);
       }
     } catch (error) {
       console.error('Error saving current user to localStorage:', error);
