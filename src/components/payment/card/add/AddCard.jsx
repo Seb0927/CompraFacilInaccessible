@@ -7,7 +7,7 @@ const AddCard = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [cardHolder, setCardHolder] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
   const errorRef = useRef(null);
 
@@ -31,10 +31,11 @@ const AddCard = () => {
     };
 
     const result = addCreditCard(creditCard);
+    console.log(result)
     if (result.success) {
       window.location.href = '/payment/card';
     } else {
-      setError(result.message);
+      setError(true);
       errorRef.current.focus();
     }
   }
@@ -50,9 +51,9 @@ const AddCard = () => {
               ref={errorRef}
               tabIndex={-1}
               role="alert"
-              className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+              className='text-lg'
             >
-              {error}
+              Hay un error en los datos ingresados
             </p>
           )}
 
