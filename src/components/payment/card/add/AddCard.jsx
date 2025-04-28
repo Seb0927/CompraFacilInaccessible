@@ -51,7 +51,7 @@ const AddCard = () => {
               ref={errorRef}
               tabIndex={-1}
               role="alert"
-              className=''
+              className='text-lg'
             >
               Hay un error en los datos ingresados
             </p>
