@@ -1,11 +1,34 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '@/contexts/UserContext'
 import shoppingCartSvg from '../../assets/vectors/shopping_cart.svg'
 
 const Header = () => {
   const { user, setUser } = useContext(UserContext);
+  const [isRootPath, setIsRootPath] = useState(false);
 
   const imageUrl = 'https://res.cloudinary.com/dao5kgzkm/image/upload/logo';
+
+  useEffect(() => {
+    // Check if the current path is the root path
+    const checkPath = () => {
+      const path = window.location.pathname;
+      setIsRootPath(path !== '/');
+    };
+
+    // Check initially
+    checkPath();
+
+    // Set up listener for route changes
+    const handleRouteChange = () => {
+      checkPath();
+    };
+
+    window.addEventListener('popstate', handleRouteChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+    };
+  }, []);
 
   const handleLogout = () => {
     setUser(null);
@@ -21,9 +44,11 @@ const Header = () => {
       https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA11.html */}
         <nav>
           <ul className='flex flex-row-reverse items-center space-x-4 space-x-reverse'>
-            <li className='text-white text-xl'>
-              <a href='assistance'>Ayuda</a>
-            </li>
+            {!isRootPath && (
+              <li className='text-white text-xl'>
+                <a href='assistance'>Ayuda</a>
+              </li>
+            )}
             <li className='text-white text-xl'>
               <a href='/blog'>Blog</a>
             </li>
