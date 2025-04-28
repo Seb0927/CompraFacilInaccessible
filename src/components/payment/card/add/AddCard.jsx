@@ -7,6 +7,7 @@ const AddCard = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [cardHolder, setCardHolder] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
+  const [error, setError] = useState(false);
 
   const errorRef = useRef(null);
 
@@ -30,9 +31,11 @@ const AddCard = () => {
     };
 
     const result = addCreditCard(creditCard);
+    console.log(result)
     if (result.success) {
       window.location.href = '/payment/card';
     } else {
+      setError(true);
       errorRef.current.focus();
     }
   }
