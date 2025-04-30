@@ -44,7 +44,6 @@ const AddCard = () => {
       <section className='flex flex-col space-y-4 h-auto w-full md:w-4/5 lg:w-8/12 py-8 px-8 bg-blue-medium-light'>
         <form className='flex flex-col space-y-4' onSubmit={handleSubmit}>
           <h1 className='text-4xl font-bold'>Agregar nueva tarjeta de crédito</h1>
-          <p className='text-lg'>Ingresa los datos de tu tarjeta de crédito a continuación</p>
 
           {error && (
             <p
