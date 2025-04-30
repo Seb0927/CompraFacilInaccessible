@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react';
 
 const Register = () => {
 
-  const { users, setUser } = useContext(UserContext);
+  const { users, setUser, addUser } = useContext(UserContext);
   
   const [email, setEmail] = useState('');
   const [confirmEmail, setConfirmEmail] = useState('');
@@ -55,7 +55,6 @@ const Register = () => {
     }
     
     // Add new user using addUser from context
-    const { addUser } = useContext(UserContext);
     const result = addUser({ email, password });
     
     if (result.success) {
