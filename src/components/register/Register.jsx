@@ -7,6 +7,7 @@ const Register = () => {
   const { users, setUser } = useContext(UserContext);
   
   const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,8 +18,14 @@ const Register = () => {
     e.preventDefault();
     
     // Basic validation
-    if (!email || !password || !repeatPassword) {
+    if (!email || !confirmEmail || !password || !repeatPassword) {
       setError('Por favor, complete todos los campos');
+      return;
+    }
+    
+    // Check if emails match
+    if (email !== confirmEmail) {
+      setError('Los correos electrónicos no coinciden');
       return;
     }
     
@@ -90,6 +97,20 @@ const Register = () => {
               type='email' 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className='w-full h-9 bg-blue-dark px-1 text-white' 
+              aria-required="true"
+            />
+          </div>
+
+          <div className='flex flex-col space-y-1'>
+            <label htmlFor='confirmEmail' className='block'>
+              Confirmar correo electrónico
+            </label>
+            <input 
+              id='confirmEmail' 
+              type='email' 
+              value={confirmEmail}
+              onChange={(e) => setConfirmEmail(e.target.value)}
               className='w-full h-9 bg-blue-dark px-1 text-white' 
               aria-required="true"
             />
