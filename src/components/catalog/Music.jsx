@@ -26,14 +26,7 @@ const Music = () => {
     audioRef.current.volume = 0.15;
 
     // Start playing the music automatically
-    const playPromise = audioRef.current.play();
-    
-    // Handle potential autoplay restrictions
-    if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.log("Autoplay prevented:", error);
-      });
-    }
+    audioRef.current.play();
 
     // Set a timeout to stop the music after 20 seconds (For accessibility)
     const timer = setTimeout(() => {

@@ -31,7 +31,6 @@ const AddCard = () => {
     };
 
     const result = addCreditCard(creditCard);
-    console.log(result)
     if (result.success) {
       window.location.href = '/payment/card';
     } else {

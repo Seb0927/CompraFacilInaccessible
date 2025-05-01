@@ -33,7 +33,6 @@ const Login = () => {
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
-    console.log('Password changed:', newPassword);
     setPassword(newPassword);
 
     // Clear any existing timer
