@@ -47,6 +47,7 @@ export default [
       'react/jsx-key': 'error',
       'react/jsx-no-duplicate-props': 'error',
       'react/jsx-no-undef': 'error',
+      'react/no-unescaped-entities': 'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'warn',
