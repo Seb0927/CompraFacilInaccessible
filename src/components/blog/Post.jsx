@@ -17,8 +17,8 @@ const Post = (props) => {
       <h2 className='text-2xl font-bold mb-2'>{title}</h2>
       <p className='text-lg mb-4'>{getSubstring(content, 150)}</p>
       <a
-        href={'/blog/post' + (id + 1)}
-        className='flex items-center justify-center h-9 w-28 bg-blue-dark text-white text-xl mt-3 hover:bg-blue-darkest'>Leer más</a>
+        className='flex items-center justify-center h-9 w-28 bg-blue-dark text-white text-xl mt-3 hover:bg-blue-darkest'
+        href={'/blog/post' + (id + 1)}>Leer más</a>
     </article>
   )
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext, useRef } from 'react'
+
 import { UserContext } from '@/contexts/UserContext'
 
 const AddCard = () => {
@@ -47,58 +48,58 @@ const AddCard = () => {
           {error && (
             <p
               ref={errorRef}
-              tabIndex={-1}
-              role="alert"
               className='text-lg'
+              role="alert"
+              tabIndex={-1}
             >
               Hay un error en los datos ingresados
             </p>
           )}
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='cardNumber' className='block'>
+            <label className='block' htmlFor='cardNumber'>
               Número de tarjeta
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='cardNumber'
               type='text'
               value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setCardNumber(e.target.value)} />
           </div>
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='cardHolder' className='block'>
+            <label className='block' htmlFor='cardHolder'>
               Responsable de la tarjeta
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='cardHolder'
               type='text'
               value={cardHolder}
-              onChange={(e) => setCardHolder(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setCardHolder(e.target.value)} />
           </div>
 
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='expirationDate' className='block'>
+            <label className='block' htmlFor='expirationDate'>
               Número de tarjeta
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='expirationDate'
               type='date'
               value={expirationDate}
-              onChange={(e) => setExpirationDate(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setExpirationDate(e.target.value)} />
           </div>
 
           <div className='flex flex-col space-y-2 items-center'>
             <button
-              type="submit"
-              className='h-9 w-36 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
+              className='h-9 w-36 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
+              type="submit">
               Agregar tarjeta
             </button>
           </div>

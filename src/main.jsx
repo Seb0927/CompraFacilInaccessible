@@ -1,6 +1,7 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useParams } from "react-router";
+
 import './index.css'
 import {
   Background,
@@ -62,15 +63,15 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DynamicPage componentName="catalog" />} />
-        <Route path="/blog" element={<DynamicPage componentName="blog" />} />
-        <Route path="/blog/:componentName" element={<DynamicPage />} />
-        <Route path="/assistance" element={<DynamicPage componentName="assistance" />} />
-        <Route path="/login" element={<DynamicPage componentName="login" />} />
-        <Route path="/register" element={<DynamicPage componentName="register" />} />
-        <Route path="/help" element={<DynamicPage componentName="assistance" />} />
-        <Route path="/payment/:componentName" element={<DynamicPage />} />
-        <Route path="/payment" element={<DynamicPage componentName="payment" />} />
+        <Route element={<DynamicPage componentName="catalog" />} path="/" />
+        <Route element={<DynamicPage componentName="blog" />} path="/blog" />
+        <Route element={<DynamicPage />} path="/blog/:componentName" />
+        <Route element={<DynamicPage componentName="assistance" />} path="/assistance" />
+        <Route element={<DynamicPage componentName="login" />} path="/login" />
+        <Route element={<DynamicPage componentName="register" />} path="/register" />
+        <Route element={<DynamicPage componentName="assistance" />} path="/help" />
+        <Route element={<DynamicPage />} path="/payment/:componentName" />
+        <Route element={<DynamicPage componentName="payment" />} path="/payment" />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

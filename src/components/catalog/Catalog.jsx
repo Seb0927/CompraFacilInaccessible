@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
-import Item from './Item';
+
 import products from '@/utils/products';
-import { ShoppingCartProvider } from '../../contexts/ShoppingCartContext';
+
+import Item from './Item';
 import Music from './Music';
+import { ShoppingCartProvider } from '../../contexts/ShoppingCartContext';
 
 const Catalog = () => {
   useEffect(() => {
@@ -40,10 +42,10 @@ const Catalog = () => {
           {products.map((product, index) => (
             <Item
               key={index}
-              title={product.title}
-              price={product.price}
               description={product.description}
               images={product.images}
+              price={product.price}
+              title={product.title}
             />
           ))}
         </ShoppingCartProvider>

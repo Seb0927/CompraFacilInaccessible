@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
+
 import { UserContext } from '@/contexts/UserContext'
+
 import shoppingCartSvg from '../../assets/vectors/shopping_cart.svg'
 
 const Header = () => {
@@ -37,7 +39,7 @@ const Header = () => {
   return (
     <header className='fixed bg-blue-darkest h-16 w-full z-50'>
       <div className='flex items-center h-full px-4 py-3 md:space-x-5'>
-        <img crossOrigin='anonymous' src={imageUrl} alt='Logo de CompraFacil' className='h-full md:block hidden' />
+        <img alt='Logo de CompraFacil' className='h-full md:block hidden' crossOrigin='anonymous' src={imageUrl} />
         <span className='text-white text-xl font-bold md:block hidden'>CompraFácil</span>
         <hr className='h-full w-0.5 blue bg-white md:block hidden' />
         {/* Justification:
@@ -60,19 +62,19 @@ const Header = () => {
       </div>
 
       <div className='absolute right-0 top-0 h-full flex items-center px-4 py-3 space-x-5'>
-        <a href="/payment/cart" className='h-full'>
-          <img src={shoppingCartSvg} alt='Tu carrito de compras' className='h-full' />
+        <a className='h-full' href="/payment/cart">
+          <img alt='Tu carrito de compras' className='h-full' src={shoppingCartSvg} />
         </a>
 
         {user ? (
           <button
-            onClick={handleLogout}
-            className='bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'>
+            className='bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'
+            onClick={handleLogout}>
             Cerrar sesión
           </button>
         ) : (
-          <a href='/login'
-            className='flex items-center justify-center bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'
+          <a className='flex items-center justify-center bg-blue-light h-full px-3 font-semibold text-lg rounded-md hover:bg-blue-medium-light'
+            href='/login'
             onFocus={() => window.location.href = '/login'}>
             Iniciar sesión
           </a>

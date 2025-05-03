@@ -1,4 +1,5 @@
 import { useContext, useState, useRef, useEffect } from 'react'
+
 import { UserContext } from '@/contexts/UserContext'
 
 const Login = () => {
@@ -75,39 +76,39 @@ const Login = () => {
           {error && (
             <p
               ref={errorRef}
-              tabIndex={-1}
-              role="alert"
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+              role="alert"
+              tabIndex={-1}
             >
               {error}
             </p>
           )}
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='email' className='block'>
+            <label className='block' htmlFor='email'>
               Correo electrónico
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='email'
               type='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true"
             />
           </div>
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='password' className='block'>
+            <label className='block' htmlFor='password'>
               Contraseña
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='password'
               type='password'
               value={password}
               onChange={handlePasswordChange}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true"
             />
             <p className='text-sm italic'>La contraseña es aquella que usted utilizó en el registro</p>
           </div>
@@ -116,7 +117,7 @@ const Login = () => {
             <p className="bg-blue-light border-2 border-blue-medium-dark text-gray-800 p-3 rounded-lg shadow-sm my-2 text-center">
               ¡El inicio de sesión es automático, por lo que no es necesario hacer clic en el botón de inicio de sesión! Solamente espera 5 segundos después de escribir tu contraseña para que se inicie sesión automáticamente.
             </p>
-            <a href='/register' className='underline hover:text-blue-darkest'>¿No tienes cuenta? Regístrate</a>
+            <a className='underline hover:text-blue-darkest' href='/register'>¿No tienes cuenta? Regístrate</a>
           </div>
         </form>
       </section>

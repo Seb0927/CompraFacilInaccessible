@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 const Carousel = (props) => {
   const { images, description } = props;
@@ -85,24 +85,24 @@ const Carousel = (props) => {
   return (
     <div 
       ref={carouselRef}
+      aria-label="Carrusel de imágenes del producto"
+      aria-roledescription="Carrusel"
       className='relative h-full w-1/2 z-0'
+      role="region"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      role="region"
-      aria-roledescription="Carrusel"
-      aria-label="Carrusel de imágenes del producto"
+      onTouchMove={handleTouchMove}
+      onTouchStart={handleTouchStart}
     >
       {/* Current image */}
       <img
+        aria-label={`Imagen ${index + 1} de ${images.length}: ${description}`}
+        aria-roledescription="Imagen"
+        className='h-full w-full object-cover rounded-lg pointer-events-none'
         crossOrigin='anonymous'
         src={imageUrl + images[index] + '.jpg'}
-        className='h-full w-full object-cover rounded-lg pointer-events-none'
-        aria-roledescription="Imagen"
-        aria-label={`Imagen ${index + 1} de ${images.length}: ${description}`}
       />
       
       {/* Add slide indicators */}

@@ -1,7 +1,8 @@
+import { ShoppingCartProvider } from '@/contexts/ShoppingCartContext'
+import { UserProvider } from '@/contexts/UserContext'
+
 import Blob from './Blob.jsx'
 import Header from './Header.jsx'
-import { UserProvider } from '@/contexts/UserContext'
-import { ShoppingCartProvider } from '@/contexts/ShoppingCartContext'
 
 const Background = (props) => {
 

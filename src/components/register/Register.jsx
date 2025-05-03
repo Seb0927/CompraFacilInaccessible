@@ -1,6 +1,7 @@
-import { useContext, useState, useRef } from 'react'
-import { UserContext } from '@/contexts/UserContext'
 import { Plus } from 'lucide-react';
+import { useContext, useState, useRef } from 'react'
+
+import { UserContext } from '@/contexts/UserContext'
 
 const Register = () => {
 
@@ -72,85 +73,85 @@ const Register = () => {
   return (
     <div className='flex justify-center w-full'>
       <section className='h-auto w-full md:w-4/5 lg:w-8/12 py-8 px-8 bg-blue-medium-light'>
-        <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
+        <form className='flex flex-col space-y-4' onSubmit={handleSubmit}>
           <h1 className='text-4xl font-bold'>Registrate</h1>
           <p className='text-lg'>Ingresa las credenciales que utilizarás para iniciar sesión en CompraFácil. Debes dar click en el botón con forma de más "+" para crear tu cuenta</p>
           
           {error && (
             <p 
               ref={errorRef}
-              tabIndex={-1}
-              role="alert"
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 font-normal rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+              role="alert"
+              tabIndex={-1}
             >
               {error}
             </p>
           )}
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='email' className='block'>
+            <label className='block' htmlFor='email'>
               Correo electrónico
             </label>
             <input 
-              id='email' 
-              type='email' 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              aria-required="true" 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
-              aria-required="true"
+              id='email'
+              type='email'
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='confirmEmail' className='block'>
+            <label className='block' htmlFor='confirmEmail'>
               Confirmar correo electrónico
             </label>
             <input 
-              id='confirmEmail' 
-              type='email' 
-              value={confirmEmail}
-              onChange={(e) => setConfirmEmail(e.target.value)}
+              aria-required="true" 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
-              aria-required="true"
+              id='confirmEmail'
+              type='email'
+              value={confirmEmail} 
+              onChange={(e) => setConfirmEmail(e.target.value)}
             />
           </div>
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='password' className='block'>
+            <label className='block' htmlFor='password'>
               Contraseña
             </label>
             <input 
-              id='password' 
-              type='password' 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              aria-required="true" 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
-              aria-required="true"
+              id='password'
+              type='password'
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)}
             />
             <p className='text-sm italic'>Tu contraseña debe de contener como mínimo 8 carácteres</p>
           </div>
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='repeatPassword' className='block'>
+            <label className='block' htmlFor='repeatPassword'>
               Repetir contraseña
             </label>
             <input 
-              id='repeatPassword' 
-              type='password' 
-              value={repeatPassword}
-              onChange={(e) => setRepeatPassword(e.target.value)}
+              aria-required="true" 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
-              aria-required="true"
+              id='repeatPassword'
+              type='password'
+              value={repeatPassword} 
+              onChange={(e) => setRepeatPassword(e.target.value)}
             />
           </div>
 
           <div className='pt-2 flex flex-col space-y-2 items-center'>
             <button 
-              type="submit"
-              className='h-9 w-auto p-2 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
+              className='h-9 w-auto p-2 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
+              type="submit">
               <Plus />
             </button>
-            <a href='/login' className='underline hover:text-blue-darkest'>Ya tengo una cuenta</a>
+            <a className='underline hover:text-blue-darkest' href='/login'>Ya tengo una cuenta</a>
           </div>
         </form>
       </section>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Post from './Post'
+
 import posts from '@/utils/posts'
+
+import Post from './Post'
 
 const Blog = () => {
   // State to control blinking animation
@@ -23,9 +25,9 @@ const Blog = () => {
         {posts.map((post, index) => (
           <Post
             key={index}
+            content={post.content}
             id={index}
             title={post.title}
-            content={post.content}
           />))}
       </div>
 

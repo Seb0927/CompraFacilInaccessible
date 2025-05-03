@@ -1,4 +1,5 @@
 import { useState, useContext, useRef } from 'react'
+
 import { UserContext } from '@/contexts/UserContext'
 
 const AddCard = () => {
@@ -38,64 +39,64 @@ const AddCard = () => {
           {error && (
             <p
               ref={errorRef}
-              tabIndex={-1}
-              role="alert"
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+              role="alert"
+              tabIndex={-1}
             >
               {error}
             </p>
           )}
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='address' className='block'>
+            <label className='block' htmlFor='address'>
               Dirección
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='address'
+              tabIndex={3}
               type='text'
               value={address}
-              tabIndex={3}
-              onChange={(e) => setAddress(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setAddress(e.target.value)} />
           </div>
 
           {/* Note: 
           Usually the neighborhood is asked first and then the address. Make it behave the same as well! */}
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='neighborhood' className='block'>
+            <label className='block' htmlFor='neighborhood'>
               Barrio
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='neighborhood'
+              tabIndex={2}
               type='text'
               value={neighborhood}
-              tabIndex={2}
-              onChange={(e) => setNeighborhood(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setNeighborhood(e.target.value)} />
           </div>
 
 
           <div className='flex flex-col space-y-1'>
-            <label htmlFor='name' className='block'>
+            <label className='block' htmlFor='name'>
               Receptor del pedido
             </label>
             <input
+              aria-required="true"
+              className='w-full h-9 bg-blue-dark px-1 text-white'
               id='name'
+              tabIndex={4}
               type='text'
               value={name}
-              tabIndex={4}
-              onChange={(e) => setName(e.target.value)}
-              className='w-full h-9 bg-blue-dark px-1 text-white'
-              aria-required="true" />
+              onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className='flex flex-col space-y-2 items-center'>
             <button
+              className='h-9 w-48 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
               tabIndex={5}
-              type="submit"
-              className='h-9 w-48 bg-blue-dark text-white text-lg hover:bg-blue-darkest'>
+              type="submit">
               Agregar dirección
             </button>
           </div>

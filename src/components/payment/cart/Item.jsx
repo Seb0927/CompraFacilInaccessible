@@ -1,6 +1,7 @@
-import { useContext, useRef, useEffect } from 'react'
-import { ShoppingCartContext } from '@/contexts/ShoppingCartContext'
 import { Plus, Minus } from 'lucide-react';
+import { useContext, useRef, useEffect } from 'react'
+
+import { ShoppingCartContext } from '@/contexts/ShoppingCartContext'
 
 const Item = (props) => {
   const { product } = props;
@@ -46,9 +47,9 @@ const Item = (props) => {
     <div className='flex flex-row w-full space-x-6 items-center py-4 border-b-2 border-black first:border-t-2'>
       {/* Product image */}
       <img
-        src={imageUrl + product.images[0]}
         alt={product.description || `Imagen de ${product.title}`}
         className='w-24 h-24 aspect-square object-cover rounded-sm'
+        src={imageUrl + product.images[0]}
       />
 
       {/* Product title */}
@@ -60,22 +61,22 @@ const Item = (props) => {
       <div className='flex flex-row items-center space-x-4 flex-1 justify-center'>
         <button
           ref={decrementButtonRef}
-          onClick={() => decrementQuantity(product.title)}
-          className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
           aria-label={`Disminuir cantidad de ${product.title}`}
+          className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
+          onClick={() => decrementQuantity(product.title)}
         >
           <Minus className='h-4 w-4 fill-white' />
         </button>
 
-        <span className='text-xl' aria-label={`Cantidad: ${product.quantity}`}>
+        <span aria-label={`Cantidad: ${product.quantity}`} className='text-xl'>
           {product.quantity}
         </span>
 
         <button
           ref={incrementButtonRef}
-          onClick={() => incrementQuantity(product.title)}
-          className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
           aria-label={`Aumentar cantidad de ${product.title}`}
+          className='bg-blue-dark text-white h-min w-min p-1 hover:bg-blue-darkest'
+          onClick={() => incrementQuantity(product.title)}
         >
           <Plus className='h-4 w-4 fill-white' />
         </button>
@@ -91,10 +92,10 @@ const Item = (props) => {
       {/* Remove button */}
       <div className='flex-1 text-right'>
         <button
-          onClick={() => removeFromCart(product.title)}
-          className='bg-blue-dark text-white py-2 px-4 hover:bg-blue-darkest'
           aria-label={`Eliminar ${product.title} del carrito`}
+          className='bg-blue-dark text-white py-2 px-4 hover:bg-blue-darkest'
           tabIndex="-1" // Make this unfocusable with keyboard
+          onClick={() => removeFromCart(product.title)}
         >
           Eliminar
         </button>

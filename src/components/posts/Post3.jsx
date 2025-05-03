@@ -1,4 +1,5 @@
 import React from 'react'
+
 import posts from '@/utils/posts'
 
 const Post3 = () => {
@@ -25,18 +26,18 @@ const Post3 = () => {
         {/* Video with subtitles */}
         <div className="mx-auto my-8 relative w-full md:w-4/6 aspect-video">
           <video
-            className="w-full rounded-lg shadow-lg"
             controls
-            preload="metadata"
+            className="w-full rounded-lg shadow-lg"
             poster="https://res.cloudinary.com/dao5kgzkm/image/upload/v1741316071/Videos/presentation-poster.jpg"
+            preload="metadata"
           >
             <source src={videoUrl} type="video/mp4" />
             {/* Audio descriptions track */}
             <track
-              src={audioDescriptionUrl}
               kind="descriptions"
-              srcLang="es"
               label="Descripción de audio"
+              src={audioDescriptionUrl}
+              srcLang="es"
             />
             Su navegador no soporta el elemento de video.
           </video>

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import posts from '@/utils/posts'
 
 const Post2 = () => {
@@ -36,8 +37,8 @@ const Post2 = () => {
         <div className="mx-auto my-8 w-full md:w-4/6">
           <div className="bg-gray-100 p-4 rounded-lg shadow">
             <audio
-              className="w-full"
               controls
+              className="w-full"
               preload="metadata"
             >
               <source src={audioUrl} type="audio/mpeg" />

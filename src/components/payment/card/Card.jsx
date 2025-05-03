@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+
 import { UserContext } from '@/contexts/UserContext';
+
 import Item from './Item';
 import Container from '../Container';
 
@@ -42,9 +44,9 @@ const Card = () => {
       {error && (
         <p
           ref={errorRef}
-          tabIndex={-1}
-          role="alert"
           className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+          role="alert"
+          tabIndex={-1}
         >
           {error}
         </p>
@@ -69,15 +71,15 @@ const Card = () => {
 
         <div className='flex flex-row items-center justify-between w-full'>
           <a
-            href={'/payment/addcard'}
             className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
+            href={'/payment/addcard'}
           >
             Agregar tarjeta
           </a>
 
           <button
-            type='submit'
-            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>
+            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
+            type='submit'>
             Continuar
           </button>
         </div>

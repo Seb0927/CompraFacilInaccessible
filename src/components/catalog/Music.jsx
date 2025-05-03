@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import { Music2 } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react';
 
 const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false); // Default state is "stop"
@@ -44,8 +44,8 @@ const Music = () => {
 
   return (
     <button 
-      className="md:absolute top-28 bg-blue-dark text-white px-4 py-2 rounded hover:bg-blue-darkest flex items-center space-x-2"
       aria-label="Música de fondo"
+      className="md:absolute top-28 bg-blue-dark text-white px-4 py-2 rounded hover:bg-blue-darkest flex items-center space-x-2"
     >
       <Music2 className="w-6 h-6" /> {/* Music icon */}
       <span>Disfruta la música</span>

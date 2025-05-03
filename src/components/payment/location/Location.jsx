@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+
 import { UserContext } from '@/contexts/UserContext'
+
 import Item from './Item'
 import Container from '../Container'
 
@@ -41,9 +43,9 @@ const Card = () => {
       {error && (
         <p
           ref={errorRef}
-          tabIndex={-1}
-          role="alert"
           className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
+          role="alert"
+          tabIndex={-1}
         >
           {error}
         </p>
@@ -60,8 +62,8 @@ const Card = () => {
               {user.locations.map((location, index) => (
                 <Item
                   key={index}
-                  location={location}
-                  isSelected={user.selectedLocation?.address === location.address} />
+                  isSelected={user.selectedLocation?.address === location.address}
+                  location={location} />
               ))}
             </div>
           )}
@@ -69,11 +71,11 @@ const Card = () => {
 
         <div className='flex flex-row items-center justify-between w-full'>
           <a
-            href={'/payment/addlocation'}
-            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>Agregar direccion</a>
+            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
+            href={'/payment/addlocation'}>Agregar direccion</a>
           <button
-            type='submit'
-            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>Continuar
+            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
+            type='submit'>Continuar
           </button>
         </div>
       </form>

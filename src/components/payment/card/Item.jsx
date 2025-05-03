@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { UserContext } from '@/contexts/UserContext';
 
 const Item = (props) => {
@@ -8,16 +9,16 @@ const Item = (props) => {
   return (
     <div className='flex flex-row space-x-6 h-16 w-full items-center border-b-2 border-black first:border-t-2'>
       <label
-        htmlFor={creditCard.number}
-        className='sr-only'>
+        className='sr-only'
+        htmlFor={creditCard.number}>
         {`Tarjeta terminada en ${creditCard.number.slice(-4)} con fecha de vencimiento ${creditCard.expiration_month}/${creditCard.expiration_year} y titular ${creditCard.owner}`}
       </label>
       <input
-        type='radio'
+        defaultChecked={isSelected}
         id={creditCard.number}
         name='creditCard'
+        type='radio'
         value={creditCard.number}
-        defaultChecked={isSelected}
       />
 
       <div
@@ -30,10 +31,10 @@ const Item = (props) => {
       </div>
 
       <button
+        aria-label={`Eliminar tarjeta terminada en ${creditCard.number.slice(-4)}`}
+        className='bg-blue-dark text-white w-24 py-2 px-4 hover:bg-blue-darkest'
         type='button'
         onClick={() => removeCreditCard(creditCard)}
-        className='bg-blue-dark text-white w-24 py-2 px-4 hover:bg-blue-darkest'
-        aria-label={`Eliminar tarjeta terminada en ${creditCard.number.slice(-4)}`}
       >
         Eliminar
       </button>

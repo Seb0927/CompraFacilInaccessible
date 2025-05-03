@@ -1,9 +1,11 @@
 import { useContext } from 'react'
-import { UserContext } from '@/contexts/UserContext'
+
 import { ShoppingCartContext } from '@/contexts/ShoppingCartContext'
+import { UserContext } from '@/contexts/UserContext'
+
 import Container from './Container'
-import Product from './Product'
 import Counter from './Counter'
+import Product from './Product'
 
 const Payment = () => {
   const { user, clearSelectedPaymentDetails } = useContext(UserContext)
@@ -66,9 +68,9 @@ const Payment = () => {
 
       <div className='flex justify-center w-full '>
         <button
-          onMouseDown={handlePayment}
+          className='h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
           onClick={handlePayment}
-          className='h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'>
+          onMouseDown={handlePayment}>
           Comprar
         </button>
       </div>

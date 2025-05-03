@@ -13,9 +13,9 @@ const Products = (props) => {
     <div className='flex flex-row w-full space-x-6 items-center py-4 border-b-2 border-black first:border-t-2'>
       {/* Product image */}
       <img
-        src={imageUrl + product.images[0]}
         alt={product.description || `Imagen de ${product.title}`}
         className='w-16 h-16 aspect-square object-cover rounded-sm'
+        src={imageUrl + product.images[0]}
       />
 
       {/* Product title */}
