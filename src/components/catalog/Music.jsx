@@ -77,7 +77,7 @@ const Music = () => {
       onClick={toggleMusic}
     >
       <Music2 className='w-6 h-6' />
-      <span>{isPlaying ? 'Parar música' : 'Disfruta la música'}</span>
+      <span>{'Disfruta la música'}</span>
     </button>
   );
 };
