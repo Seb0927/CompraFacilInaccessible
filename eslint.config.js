@@ -75,6 +75,8 @@ export default [
       'import/no-named-as-default': 'warn',
       
       // Other useful rules
+      'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      'jsx-quotes': ['error', 'prefer-single'],
       'no-console': 'warn',
       'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_', 'varsIgnorePattern': '^_' }],
       'prefer-const': 'warn',
