@@ -40,7 +40,7 @@ const AddCard = () => {
             <p
               ref={errorRef}
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
-              role="alert"
+              role='alert'
               tabIndex={-1}
             >
               {error}
@@ -52,7 +52,7 @@ const AddCard = () => {
               Dirección
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='address'
               tabIndex={3}
@@ -68,7 +68,7 @@ const AddCard = () => {
               Barrio
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='neighborhood'
               tabIndex={2}
@@ -83,7 +83,7 @@ const AddCard = () => {
               Receptor del pedido
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='name'
               tabIndex={4}
@@ -96,7 +96,7 @@ const AddCard = () => {
             <button
               className='h-9 w-48 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
               tabIndex={5}
-              type="submit">
+              type='submit'>
               Agregar dirección
             </button>
           </div>

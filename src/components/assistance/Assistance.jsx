@@ -21,9 +21,9 @@ const Assistance = () => {
         <p className='w-full text-center italic mt-12'>
           Si necesitas asistencia, contáctanos al siguiente número: {' '}
           <a
-            aria-label="Llamar al número de teléfono +57 302 444 9999"
-            className="text-blue-dark hover:text-blue-darkest underline"
-            href="tel:+57302444999"
+            aria-label='Llamar al número de teléfono +57 302 444 9999'
+            className='text-blue-dark hover:text-blue-darkest underline'
+            href='tel:+57302444999'
           >
             +57 302 444 9999
           </a>

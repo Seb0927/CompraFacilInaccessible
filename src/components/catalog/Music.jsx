@@ -2,53 +2,82 @@ import { Music2 } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react';
 
 const Music = () => {
-  const [isPlaying, setIsPlaying] = useState(false); // Default state is "stop"
-  const audioUrl = 'https://res.cloudinary.com/dao5kgzkm/video/upload/v1741316071/audio/backgroundMusic.mp3'
-  const audioRef = useRef(new Audio(audioUrl)); // Reference to the audio file
-
-  // Set the volume to 0.15 when the component is initialized
-  audioRef.current.volume = 0.15;
-
-  // Function to toggle music play/pause (Implement later)
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioUrl = 'https://res.cloudinary.com/dao5kgzkm/video/upload/v1741316071/audio/backgroundMusic.mp3';
+  
+  const audioRef = useRef(null);
+  
+  // Initialize the audio element
+  useEffect(() => {
+    const audio = new Audio(audioUrl);
+    audio.crossOrigin = 'anonymous';
+    audio.volume = 0.15;
+    audioRef.current = audio;
+    
+    return () => {
+      // Cleanup
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+      }
+    };
+  }, [audioUrl]);
+  
+  // Function to toggle music play/pause
   const toggleMusic = () => {
+    if (!audioRef.current) return;
+    
     if (isPlaying) {
-      audioRef.current.pause(); // Pause the music
-      audioRef.current.currentTime = 0; // Reset to the beginning
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     } else {
-      audioRef.current.play(); // Play the music
+      audioRef.current.play();
     }
-    setIsPlaying(!isPlaying); // Toggle the state
+    setIsPlaying(!isPlaying);
   };
 
-  // Start music automatically
+  // Play music automatically for a limited time
   useEffect(() => {
-    // Set the volume
-    audioRef.current.volume = 0.15;
-
+    if (!audioRef.current) return;
+    
+    const audio = audioRef.current;
+    
     // Start playing the music automatically
-    audioRef.current.play();
+    const playPromise = audio.play();
+    
+    // Handle play promise (may fail due to autoplay restrictions)
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error('Autoplay prevented:', error);
+      });
+    }
 
-    // Set a timeout to stop the music after 20 seconds (For accessibility)
+    // Set a timeout to stop the music after 20 seconds
     const timer = setTimeout(() => {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+        setIsPlaying(false);
+      }
     }, 20000);
 
-    // Cleanup function
     return () => {
       clearTimeout(timer);
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     };
   }, []);
 
   return (
     <button 
-      aria-label="Música de fondo"
-      className="md:absolute top-28 bg-blue-dark text-white px-4 py-2 rounded hover:bg-blue-darkest flex items-center space-x-2"
+      aria-label='Música de fondo'
+      className='md:absolute top-28 bg-blue-dark text-white px-4 py-2 rounded hover:bg-blue-darkest flex items-center space-x-2'
+      onClick={toggleMusic}
     >
-      <Music2 className="w-6 h-6" /> {/* Music icon */}
-      <span>Disfruta la música</span>
+      <Music2 className='w-6 h-6' />
+      <span>{isPlaying ? 'Parar música' : 'Disfruta la música'}</span>
     </button>
   );
 };

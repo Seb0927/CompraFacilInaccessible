@@ -94,7 +94,7 @@ const Item = (props) => {
         <button
           aria-label={`Eliminar ${product.title} del carrito`}
           className='bg-blue-dark text-white py-2 px-4 hover:bg-blue-darkest'
-          tabIndex="-1" // Make this unfocusable with keyboard
+          tabIndex='-1' // Make this unfocusable with keyboard
           onClick={() => removeFromCart(product.title)}
         >
           Eliminar

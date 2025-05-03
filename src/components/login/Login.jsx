@@ -77,7 +77,7 @@ const Login = () => {
             <p
               ref={errorRef}
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
-              role="alert"
+              role='alert'
               tabIndex={-1}
             >
               {error}
@@ -89,7 +89,7 @@ const Login = () => {
               Correo electrónico
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='email'
               type='email'
@@ -103,7 +103,7 @@ const Login = () => {
               Contraseña
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='password'
               type='password'
@@ -114,7 +114,7 @@ const Login = () => {
           </div>
 
           <div className='flex flex-col space-y-2 items-center text-center'>
-            <p className="bg-blue-light border-2 border-blue-medium-dark text-gray-800 p-3 rounded-lg shadow-sm my-2 text-center">
+            <p className='bg-blue-light border-2 border-blue-medium-dark text-gray-800 p-3 rounded-lg shadow-sm my-2 text-center'>
               ¡El inicio de sesión es automático, por lo que no es necesario hacer clic en el botón de inicio de sesión! Solamente espera 5 segundos después de escribir tu contraseña para que se inicie sesión automáticamente.
             </p>
             <a className='underline hover:text-blue-darkest' href='/register'>¿No tienes cuenta? Regístrate</a>

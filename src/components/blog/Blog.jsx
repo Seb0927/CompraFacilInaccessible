@@ -37,10 +37,10 @@ const Blog = () => {
         className={`mt-10 mx-auto max-w-4xl border-2 border-blue-dark rounded-lg p-6 shadow-md
           ${isBlinking ? 'animate-blink' : 'bg-blue-light'}`}
       >
-        <h2 className="text-2xl font-bold text-center mb-3">
+        <h2 className='text-2xl font-bold text-center mb-3'>
           ¡Promociones de Verano Disponibles Ahora!
         </h2>
-        <p className="text-lg text-center mb-4">
+        <p className='text-lg text-center mb-4'>
           Disfruta de descuentos increíbles en toda nuestra colección de verano.
           Renueva tu armario con las últimas tendencias a precios imbatibles.
         </p>

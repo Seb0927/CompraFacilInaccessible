@@ -25,7 +25,7 @@ const Payment = () => {
       <span className='text-4xl font-bold w-full text-center'>Compra final</span>
 
       {/* Counter */}
-      <div className="w-full max-w-md mx-auto my-4">
+      <div className='w-full max-w-md mx-auto my-4'>
         <Counter />
       </div>
 
@@ -45,8 +45,8 @@ const Payment = () => {
               <span className='text-2xl font-bold'>Tarjeta</span>
               <p>{'**' + user.selectedCreditCard.number.slice(-4)}</p>
               <p>
-                <time dateTime={"01-" + user.selectedCreditCard.expiration_month + "-" + user.selectedCreditCard.expiration_year}>
-                  {user.selectedCreditCard.expiration_month + "/" + user.selectedCreditCard.expiration_year}
+                <time dateTime={'01-' + user.selectedCreditCard.expiration_month + '-' + user.selectedCreditCard.expiration_year}>
+                  {user.selectedCreditCard.expiration_month + '/' + user.selectedCreditCard.expiration_year}
                 </time>
               </p>
               <p>

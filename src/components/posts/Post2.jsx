@@ -33,18 +33,18 @@ const Post2 = () => {
         ))}
 
         {/* Audio player */}
-        <h3 className="text-3xl font-semibold mb-4">Entrevista</h3>
-        <div className="mx-auto my-8 w-full md:w-4/6">
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
+        <h3 className='text-3xl font-semibold mb-4'>Entrevista</h3>
+        <div className='mx-auto my-8 w-full md:w-4/6'>
+          <div className='bg-gray-100 p-4 rounded-lg shadow'>
             <audio
               controls
-              className="w-full"
-              preload="metadata"
+              className='w-full'
+              preload='metadata'
             >
-              <source src={audioUrl} type="audio/mpeg" />
+              <source src={audioUrl} type='audio/mpeg' />
               Su navegador no soporta la reproducción de audio.
             </audio>
-            <p className="mt-3 text-sm text-gray-600">
+            <p className='mt-3 text-sm text-gray-600'>
               Entrevista con el equipo de CompraFácil sobre las nuevas tendencias de moda.
             </p>
           </div>

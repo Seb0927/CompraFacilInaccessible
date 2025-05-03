@@ -62,7 +62,7 @@ const Header = () => {
       </div>
 
       <div className='absolute right-0 top-0 h-full flex items-center px-4 py-3 space-x-5'>
-        <a className='h-full' href="/payment/cart">
+        <a className='h-full' href='/payment/cart'>
           <img alt='Tu carrito de compras' className='h-full' src={shoppingCartSvg} />
         </a>
 

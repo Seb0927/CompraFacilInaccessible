@@ -26,7 +26,7 @@ const Item = (props) => {
         className='flex-auto flex flex-row space-x-6 items-center cursor-pointer'
       >
         <span className='flex-1 text-center text-lg'>{'**' + creditCard.number.slice(-4)}</span>
-        <span className='flex-1 text-center text-lg'>{creditCard.expiration_month + "/" + creditCard.expiration_year}</span>
+        <span className='flex-1 text-center text-lg'>{creditCard.expiration_month + '/' + creditCard.expiration_year}</span>
         <span className='flex-1 text-center text-lg'>{creditCard.owner}</span>
       </div>
 

@@ -45,7 +45,7 @@ const Card = () => {
         <p
           ref={errorRef}
           className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-red-500'
-          role="alert"
+          role='alert'
           tabIndex={-1}
         >
           {error}

@@ -49,7 +49,7 @@ const AddCard = () => {
             <p
               ref={errorRef}
               className='text-lg'
-              role="alert"
+              role='alert'
               tabIndex={-1}
             >
               Hay un error en los datos ingresados
@@ -61,7 +61,7 @@ const AddCard = () => {
               Número de tarjeta
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='cardNumber'
               type='text'
@@ -74,7 +74,7 @@ const AddCard = () => {
               Responsable de la tarjeta
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='cardHolder'
               type='text'
@@ -88,7 +88,7 @@ const AddCard = () => {
               Número de tarjeta
             </label>
             <input
-              aria-required="true"
+              aria-required='true'
               className='w-full h-9 bg-blue-dark px-1 text-white'
               id='expirationDate'
               type='date'
@@ -99,7 +99,7 @@ const AddCard = () => {
           <div className='flex flex-col space-y-2 items-center'>
             <button
               className='h-9 w-36 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
-              type="submit">
+              type='submit'>
               Agregar tarjeta
             </button>
           </div>

@@ -81,7 +81,7 @@ const Register = () => {
             <p 
               ref={errorRef}
               className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 font-normal rounded focus:outline-none focus:ring-2 focus:ring-red-500'
-              role="alert"
+              role='alert'
               tabIndex={-1}
             >
               {error}
@@ -93,7 +93,7 @@ const Register = () => {
               Correo electrónico
             </label>
             <input 
-              aria-required="true" 
+              aria-required='true' 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
               id='email'
               type='email'
@@ -107,7 +107,7 @@ const Register = () => {
               Confirmar correo electrónico
             </label>
             <input 
-              aria-required="true" 
+              aria-required='true' 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
               id='confirmEmail'
               type='email'
@@ -121,7 +121,7 @@ const Register = () => {
               Contraseña
             </label>
             <input 
-              aria-required="true" 
+              aria-required='true' 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
               id='password'
               type='password'
@@ -136,7 +136,7 @@ const Register = () => {
               Repetir contraseña
             </label>
             <input 
-              aria-required="true" 
+              aria-required='true' 
               className='w-full h-9 bg-blue-dark px-1 text-white' 
               id='repeatPassword'
               type='password'
@@ -148,7 +148,7 @@ const Register = () => {
           <div className='pt-2 flex flex-col space-y-2 items-center'>
             <button 
               className='h-9 w-auto p-2 bg-blue-dark text-white text-lg hover:bg-blue-darkest'
-              type="submit">
+              type='submit'>
               <Plus />
             </button>
             <a className='underline hover:text-blue-darkest' href='/login'>Ya tengo una cuenta</a>

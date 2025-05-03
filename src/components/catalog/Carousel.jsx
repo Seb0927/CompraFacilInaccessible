@@ -85,10 +85,10 @@ const Carousel = (props) => {
   return (
     <div 
       ref={carouselRef}
-      aria-label="Carrusel de imágenes del producto"
-      aria-roledescription="Carrusel"
+      aria-label='Carrusel de imágenes del producto'
+      aria-roledescription='Carrusel'
       className='relative h-full w-1/2 z-0'
-      role="region"
+      role='region'
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -99,14 +99,14 @@ const Carousel = (props) => {
       {/* Current image */}
       <img
         aria-label={`Imagen ${index + 1} de ${images.length}: ${description}`}
-        aria-roledescription="Imagen"
+        aria-roledescription='Imagen'
         className='h-full w-full object-cover rounded-lg pointer-events-none'
         crossOrigin='anonymous'
         src={imageUrl + images[index] + '.jpg'}
       />
       
       {/* Add slide indicators */}
-      <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+      <div className='absolute bottom-2 left-0 right-0 flex justify-center gap-2'>
         {images.map((_, i) => (
           <div
             key={i}
