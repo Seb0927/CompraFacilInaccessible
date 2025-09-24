@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Post = (props) => {
 
   const { id, title, content } = props;

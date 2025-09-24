@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Assistance = () => {
   return (
     <div className='flex justify-center w-full'>

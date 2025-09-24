@@ -1,5 +1,3 @@
-import React from 'react'
-
 import posts from '@/utils/posts'
 
 const Post1 = () => {
