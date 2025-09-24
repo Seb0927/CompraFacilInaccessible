@@ -110,9 +110,6 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
       } else {
         localStorage.removeItem(CURRENT_USER_KEY);
-        // Also clear selected payment details when user logs out
-        localStorage.removeItem(SELECTED_CARD_KEY);
-        localStorage.removeItem(SELECTED_LOCATION_KEY);
       }
     } catch (error) {
       console.error('Error saving current user to localStorage:', error);
@@ -412,21 +409,14 @@ export const UserProvider = ({ children }) => {
   * Clear selected payment details
   */
   const clearSelectedPaymentDetails = () => {
-    // Clear the selections in the user object
+    // Clear payment details from the user object in localStorage
     if (user) {
       const updatedUser = {
         ...user,
         selectedCreditCard: null,
-        selectedLocation: null
+        selectedLocation: null,
       };
-
-      // Update current user and users array
-      setUser(updatedUser);
-      setUsers(prevUsers =>
-        prevUsers.map(u =>
-          u.email === user.email ? updatedUser : u
-        )
-      );
+      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(updatedUser));
     }
   };
 
