@@ -1,12 +1,17 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import products from '@/utils/products';
 
 import Item from './Item';
 import Music from './Music';
+import Notification from './Notification';
 import { ShoppingCartProvider } from '../../contexts/ShoppingCartContext';
 
 const Catalog = () => {
+  const [notification, setNotification] = useState('');
+
+  const showNotification = (message) => setNotification(message);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       // Check if the pressed key is 'c' or 'C'
@@ -25,6 +30,7 @@ const Catalog = () => {
   }, []);
   
   return (
+    <>
     <section>
       <div className='flex flex-col items-center md:items-start mb-4 md:mb-0'>
         <Music />
@@ -45,6 +51,7 @@ const Catalog = () => {
               description={product.description}
               images={product.images}
               price={product.price}
+              showNotification={showNotification}
               title={product.title}
             />
           ))}
@@ -55,6 +62,8 @@ const Catalog = () => {
         <span className='font-bold'>Consejo:</span> ¡Puedes utilizar la tecla "C" para ir a tu carrito de compras!
       </p>
     </section>
+    <Notification message={notification} onClose={() => setNotification('')} />
+    </>
   )
 }
 
