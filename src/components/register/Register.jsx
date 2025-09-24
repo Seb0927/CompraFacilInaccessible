@@ -59,9 +59,6 @@ const Register = () => {
     const result = addUser({ email, password });
     
     if (result.success) {
-      // Auto-login the user
-      setUser({ email });
-      
       // Redirect to home page
       window.location.href = '/';
     } else {
