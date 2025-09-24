@@ -25,6 +25,7 @@ const Post3 = () => {
         <div className='mx-auto my-8 relative w-full md:w-4/6 aspect-video'>
           <video
             controls
+            crossOrigin='anonymous'
             className='w-full rounded-lg shadow-lg'
             poster='https://res.cloudinary.com/dao5kgzkm/image/upload/v1741316071/Videos/presentation-poster.jpg'
             preload='metadata'

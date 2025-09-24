@@ -61,7 +61,7 @@ const Header = () => {
 
       <div className='absolute right-0 top-0 h-full flex items-center px-4 py-3 space-x-5'>
         <a className='h-full' href='/payment/cart'>
-          <img alt='Tu carrito de compras' className='h-full' src='/assets/vectors/shopping_cart.svg' />
+          <img alt='Tu carrito de compras' crossOrigin='anonymous' className='h-full' src='/assets/vectors/shopping_cart.svg' />
         </a>
 
         {user ? (

@@ -1,8 +1,12 @@
 const Blob = () => {
   return (
     <div>
-      <img alt='vectors/blob.svg' className='w-80 h-80 md:h-108 md:w-108 lg:h-128 lg:w-128'
-      src='/assets/vectors/blob.svg'/>
+      <img
+        alt='vectors/blob.svg'
+        crossOrigin='anonymous'
+        className='w-80 h-80 md:h-108 md:w-108 lg:h-128 lg:w-128'
+        src='/assets/vectors/blob.svg'
+      />
     </div>
   )
 }

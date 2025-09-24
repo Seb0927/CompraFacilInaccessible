@@ -14,6 +14,7 @@ const Products = (props) => {
       {/* Product image */}
       <img
         alt={product.description || `Imagen de ${product.title}`}
+        crossOrigin='anonymous'
         className='w-16 h-16 aspect-square object-cover rounded-sm'
         src={imageUrl + product.images[0]}
       />
