@@ -77,7 +77,7 @@ export default [
       // Other useful rules
       'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
       'jsx-quotes': ['error', 'prefer-single'],
-      'no-console': 'warn',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_', 'varsIgnorePattern': '^_' }],
       'prefer-const': 'warn',
       'no-var': 'error',
