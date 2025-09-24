@@ -118,7 +118,6 @@ export const ShoppingCartProvider = ({ children }) => {
 
         if (currentQuantity <= 1) {
           // Do nothing
-          
         } else {
           // Create a copy of the cart array
           const updatedCart = [...prevCart];
@@ -139,7 +138,11 @@ export const ShoppingCartProvider = ({ children }) => {
 
   // Clear the entire cart
   const clearCart = () => {
-    setCart([]);
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+    } catch (error) {
+      console.error('Error clearing cart in localStorage:', error);
+    }
   };
 
   // Create context value
