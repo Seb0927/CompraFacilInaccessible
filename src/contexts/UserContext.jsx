@@ -148,6 +148,8 @@ export const UserProvider = ({ children }) => {
       password: newUser.password,
       locations: [],
       creditCards: [],
+      selectedCreditCard: null,
+      selectedLocation: null,
     }]);
 
     return { success: true, message: 'Usuario registrado exitosamente' };
