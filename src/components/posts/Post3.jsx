@@ -6,8 +6,8 @@ const Post3 = () => {
 
   const post = posts[2]
   const videoUrl = 'https://res.cloudinary.com/dao5kgzkm/video/upload/v1741316071/Videos/ad.mp4'
-  const subtitlesUrl = '/src/assets/subtitles/ad.vtt'
-  const audioDescriptionUrl = '/src/assets/descriptions/ad.vtt'
+  const subtitlesUrl = '/assets/subtitles/ad.vtt'
+  const audioDescriptionUrl = '/assets/descriptions/ad.vtt'
 
   // Split the content by newline characters to create an array of paragraphs
   const paragraphs = post.content.split('\n').filter(para => para.trim() !== '')
