@@ -30,7 +30,22 @@ const Cart = () => {
       </div>
 
       <div className='flex flex-row items-center justify-center'>
-        <a className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest' href={'/payment/card'}>Comprar</a>
+        {cart.length === 0 ? (
+          <span
+            aria-disabled='true'
+            className='flex items-center justify-center h-9 w-48 bg-gray-400 text-white text-xl cursor-not-allowed opacity-60'
+            tabIndex={-1}
+          >
+            Comprar
+          </span>
+        ) : (
+          <a
+            className='flex items-center justify-center h-9 w-48 bg-blue-dark text-white text-xl hover:bg-blue-darkest'
+            href={'/payment/card'}
+          >
+            Comprar
+          </a>
+        )}
       </div>
     </Container>
   )
